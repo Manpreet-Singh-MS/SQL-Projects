@@ -2,7 +2,8 @@ show databases;
 
 use org;
 
-CREATE TABLE Worker (
+CREATE TABLE Worker 
+(
 	WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	FIRST_NAME CHAR(25),
 	LAST_NAME CHAR(25),
@@ -27,12 +28,15 @@ insert into worker values
         
 select * from worker;
 
-create table bonus(
-worker_ref_id int,
-bonus_amount int,
-bonus_date DATETIME,
-foreign key (worker_ref_id) references worker(worker_id)
-on delete cascade);
+create table bonus
+(
+	worker_ref_id int,
+	bonus_amount int,
+	bonus_date DATETIME,
+	foreign key (worker_ref_id) references worker(worker_id)
+	on delete cascade
+
+);
 
 insert into bonus values
 (001, 5000, '16-02-20'),
@@ -43,12 +47,15 @@ insert into bonus values
         
 select * from bonus;
 
-create table title(
-worker_ref_id int,
-worker_title varchar(25),
-affected_from DATETIME,
-foreign key(worker_ref_id) references worker(worker_id)
-ON DELETE cascade);
+create table title
+(
+	worker_ref_id int,
+	worker_title varchar(25),
+	affected_from DATETIME,
+	foreign key(worker_ref_id) references worker(worker_id)
+	ON DELETE cascade
+    
+);
 
 insert into title values
 (001, 'Manager', '2016-02-20 00:00:00'),
