@@ -60,3 +60,7 @@ insert into title values(001, 'Manager', '2016-02-20 00:00:00'),
  select * from worker;
  select * from bonus;
  select * from title;
+ 
+--  Q-1. Write an SQL query to fetch “FIRST_NAME” from the Worker table using the alias name <WORKER_NAME>.-- 
+
+select first_name as Worker_Name from worker;
