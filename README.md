@@ -25,4 +25,10 @@ Database and Tools:- MySql, SQL WorkBench
 Schema - Zomato Database
 Tables - goldusers_signup, product, sales, users
 
+4. SQL_Project_Organization_Analysis
+
+Database and Tools:- MySql, SQL WorkBench
+Schema - Org Database
+Tables - worker, bonus, title
+
 
