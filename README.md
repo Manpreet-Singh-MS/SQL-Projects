@@ -5,7 +5,7 @@
 SQL project to analyze online music store data
 
 Database and Tools:- Postgre SQL, PgAdmin4
-Schema- Music Store Database
+\nSchema- Music Store Database
 
 
 2. SQL_Project_Indian_Census_Analysis
