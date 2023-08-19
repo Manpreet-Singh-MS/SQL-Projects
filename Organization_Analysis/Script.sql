@@ -64,3 +64,21 @@ insert into title values(001, 'Manager', '2016-02-20 00:00:00'),
 --  Q-1. Write an SQL query to fetch “FIRST_NAME” from the Worker table using the alias name <WORKER_NAME>.-- 
 
 select first_name as Worker_Name from worker;
+
+-- Q-2. Write an SQL query to fetch “FIRST_NAME” from the Worker table in upper case.
+
+select upper(First_name) from worker;
+
+-- Q-3. Write an SQL query to fetch unique values of DEPARTMENT from the Worker table.
+
+select distinct(department) from worker;
+
+-- Q-4. Write an SQL query to print the first three characters of  FIRST_NAME from the Worker table.
+
+select substring(first_name,1,3) from worker;
+
+-- Q-5. Write an SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from the Worker table.
+
+select instr(First_name,BINARY 'a') from worker 
+where first_name = "Amitabh";
+
