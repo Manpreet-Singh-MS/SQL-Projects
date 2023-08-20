@@ -92,3 +92,22 @@ select substring(first_name,1,3) from worker;
 select instr(First_name,BINARY 'a') from worker 
 where first_name = "Amitabh";
 
+-- Q-6. Write an SQL query to print the FIRST_NAME from the Worker table after removing white spaces from the right side.
+
+select rtrim(first_name) from worker;
+
+-- Q-7. Write an SQL query to print the DEPARTMENT from the Worker table after removing white spaces from the left side.
+
+select ltrim(first_name) from worker;
+
+-- Q-8. Write an SQL query that fetches the unique values of DEPARTMENT from the Worker table and prints its length.
+
+select distinct length(department) from worker;
+
+-- Q-9. Write an SQL query to print the FIRST_NAME from the Worker table after replacing ‘a’ with ‘A’.
+
+select replace(First_name,'a','A') from worker;
+
+-- Q-10. Write an SQL query to print the FIRST_NAME and LAST_NAME from the Worker table into a single column COMPLETE_NAME. A space char should separate them.
+
+select concat(first_name,' ',last_name) as full_name from worker;
