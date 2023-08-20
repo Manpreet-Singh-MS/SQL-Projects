@@ -111,3 +111,28 @@ select replace(First_name,'a','A') from worker;
 -- Q-10. Write an SQL query to print the FIRST_NAME and LAST_NAME from the Worker table into a single column COMPLETE_NAME. A space char should separate them.
 
 select concat(first_name,' ',last_name) as full_name from worker;
+
+-- Q-11. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+
+select * from worker
+order by first_name asc;
+
+-- Q-12. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+
+select * from worker
+order by first_name asc ,department desc;
+
+-- Q-13. Write an SQL query to print details for Workers with the first names “Vipul” and “Satish” from the Worker table.
+
+select * from worker
+where first_name IN ('Vipul','Satish');
+
+-- Q-14. Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from the Worker table.
+
+select * from worker
+where first_name NOT IN ('Vipul','Satish');
+
+-- Q-15. Write an SQL query to print details of Workers with DEPARTMENT name as “Admin”.
+
+select * from worker
+where department = 'Admin';
