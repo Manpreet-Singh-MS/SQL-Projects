@@ -189,3 +189,34 @@ where t.worker_title = 'Manager';
 select worker_title,affected_from, count(*) from title
 group by worker_title,affected_from
 having count(*) > 1;
+
+-- Q-26. Write an SQL query to show only odd rows from a table.
+
+select * from worker
+where mod(worker_id,2) <> 0;
+
+-- Q-27. Write an SQL query to show only even rows from a table.
+
+select * from worker
+where mod(worker_id,2) = 0;
+
+-- Q-28. Write an SQL query to clone a new table from another table.
+
+create table workerclone like worker;
+
+insert into workerclone 
+select * from worker;
+
+select * from workerclone;
+
+-- Q-29. Write an SQL query to fetch intersecting records of two tables.
+
+(select * from worker)
+INTERSECT
+(select * from workerclone)
+
+-- Q-30. Write an SQL query to show records from one table that another table does not have.
+
+(select * from worker)
+MINUS
+(select * from title)
