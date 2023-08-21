@@ -136,3 +136,56 @@ where first_name NOT IN ('Vipul','Satish');
 
 select * from worker
 where department = 'Admin';
+
+-- Q-16. Write an SQL query to print details of the Workers whose FIRST_NAME contains ‘a’.
+
+select first_name from worker
+where first_name like '%a%';
+
+-- Q-17. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘a’.
+
+select first_name from worker
+where first_name like '%a';
+
+-- Q-18. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
+
+select * from worker
+where first_name like '%_____h';
+
+-- Q-19. Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+
+select * from worker
+having salary between 100000 and 500000;
+
+-- Q-20. Write an SQL query to print details of the Workers who joined in Feb’2014.
+
+select * from worker
+where year(joining_date) = 2014 and month(joining_date) = 2;
+
+-- Q-21. Write an SQL query to fetch the count of employees working in the department ‘Admin’.
+
+select count(*) from worker
+where department = 'Admin';
+
+-- Q-22. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+
+select concat(First_name,' ',last_name) as full_name,salary from worker
+where worker_id IN (select worker_id from worker where salary between 50000 and 100000);
+
+-- Q-23. Write an SQL query to fetch the no. of workers for each department in descending order
+
+select department,count(worker_id) as Total_Count from worker
+group by department
+order by Total_Count Desc;
+
+-- Q-24. Write an SQL query to print details of the Workers who are also Managers.
+
+select w.*,t.worker_title from worker w
+inner join title t on t.worker_ref_id = w.worker_id
+where t.worker_title = 'Manager';
+
+-- Q-25. Write an SQL query to fetch duplicate records having matching data in some fields of a table.
+
+select worker_title,affected_from, count(*) from title
+group by worker_title,affected_from
+having count(*) > 1;
